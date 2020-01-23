@@ -1,0 +1,7 @@
+- name: Install docker 17
+  notify: cleanup docker
+  ansible.unix.zypper:
+    name: '{{ docker_packages }}'
+    force: true
+    disable_gpg_check: true
+    update_cache: true
